@@ -16,7 +16,7 @@
     <meta property="og:title" content="Roll a Dice Online - 3D Dice Roller">
     <meta property="og:description" content="Roll multi-sided 3D dice online with realistic physics. Free virtual dice for all your gaming needs.">
     
-    <!-- Schema.org Zengin Sonuçlar (Google için Web Aracı Tanımlaması) -->
+    <!-- Schema.org Zengin Sonuçlar -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -35,7 +35,7 @@
     }
     </script>
 
-    <!-- Google AdSense -->
+    <!-- Google AdSense Ana Scripti (Sadece 1 Kere Yüklenir) -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9732040219466009" crossorigin="anonymous"></script>
 
     <!-- Tailwind CSS -->
@@ -74,27 +74,6 @@
             touch-action: manipulation;
         }
 
-        /* Reklam Alanı Çizgileri */
-        .ad-placeholder {
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(30, 41, 59, 0.5),
-                rgba(30, 41, 59, 0.5) 10px,
-                rgba(15, 23, 42, 0.5) 10px,
-                rgba(15, 23, 42, 0.5) 20px
-            );
-            border: 1px dashed #475569;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #94a3b8;
-            border-radius: 0.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
         .btn-dice-count.active {
             background-color: rgba(99, 102, 241, 0.2);
             border-color: #6366f1;
@@ -116,23 +95,14 @@
     <!-- Üst Bar ve Logo -->
     <header class="w-full bg-darker border-b border-slate-800 p-4 flex items-center justify-between z-20 shadow-lg">
         <div class="flex items-center gap-3">
-            <!-- Özel Tasarım 3D İzometrik Zar Logosu (SVG) -->
             <div class="w-10 h-10 flex items-center justify-center">
                 <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-lg">
-                    <!-- Sol Yüzey -->
                     <polygon points="50,55 10,35 10,75 50,95" fill="#4f46e5" />
-                    <!-- Sağ Yüzey -->
                     <polygon points="50,55 90,35 90,75 50,95" fill="#6366f1" />
-                    <!-- Üst Yüzey -->
                     <polygon points="50,15 90,35 50,55 10,35" fill="#a855f7" />
-                    
-                    <!-- Noktalar -->
-                    <!-- Üst yüzeydeki 1 nokta -->
                     <circle cx="50" cy="35" r="5" fill="#ffffff" opacity="0.9" />
-                    <!-- Sol yüzeydeki 2 nokta -->
                     <circle cx="30" cy="55" r="4" fill="#ffffff" opacity="0.9" />
                     <circle cx="30" cy="75" r="4" fill="#ffffff" opacity="0.9" />
-                    <!-- Sağ yüzeydeki 3 nokta -->
                     <circle cx="70" cy="48" r="4" fill="#ffffff" opacity="0.9" />
                     <circle cx="70" cy="65" r="4" fill="#ffffff" opacity="0.9" />
                     <circle cx="70" cy="82" r="4" fill="#ffffff" opacity="0.9" />
@@ -145,13 +115,11 @@
                 Professional 3D Dice Platform
             </div>
             
-            <!-- Dil Değiştirici Butonları -->
             <div class="flex bg-slate-800 rounded-lg p-1 border border-slate-700">
                 <button id="btn-lang-en" class="px-2 py-1 rounded-md text-xs font-bold transition-colors bg-indigo-500 text-white shadow">EN</button>
                 <button id="btn-lang-tr" class="px-2 py-1 rounded-md text-xs font-bold transition-colors text-slate-400 hover:text-white">TR</button>
             </div>
 
-            <!-- Ayarlar Butonu -->
             <button id="btn-open-settings" class="p-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg text-indigo-400 hover:text-indigo-300 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-md">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -161,20 +129,24 @@
         </div>
     </header>
 
-    <!-- Üst Reklam Alanı (Desktop: 728x90, Mobile: 320x50) -->
-    <div class="w-full bg-dark py-3 flex justify-center border-b border-slate-800 z-10 shrink-0">
-        <div class="ad-placeholder hidden md:flex w-[728px] h-[90px]">
-            <span class="font-semibold text-slate-400" data-i18n="ad_top">Top Ad Space (728x90)</span>
-            <span class="text-xs text-slate-500 mt-1" data-i18n="ad_top_desc">Google AdSense will automatically place ads here.</span>
-        </div>
-        <div class="ad-placeholder flex md:hidden w-[320px] h-[50px]">
-            <span class="text-sm font-semibold text-slate-400" data-i18n="ad_mobile">Mobile Ad Space</span>
+    <!-- Üst YATAY Reklam Alanı -->
+    <div class="w-full bg-dark py-2 flex justify-center border-b border-slate-800 z-10 shrink-0">
+        <div class="w-full max-w-[970px] min-h-[90px] flex justify-center items-center overflow-hidden">
+            <!-- zar_ust_banner -->
+            <ins class="adsbygoogle"
+                 style="display:block; width:100%;"
+                 data-ad-client="ca-pub-9732040219466009"
+                 data-ad-slot="7707779790"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
     </div>
 
     <!-- Ana İçerik -->
     <main class="flex-1 flex overflow-hidden relative w-full">
-        <!-- 3D Canvas ve Kontroller -->
         <div id="canvas-wrapper" class="flex-1 relative w-full h-full">
             <div id="canvas-container" class="w-full h-full"></div>
             
@@ -190,22 +162,6 @@
             </div>
         </div>
     </main>
-
-    <!-- Tam Ekran Geçiş Reklamı Modalı (Google AdSense Vignette/Interstitial İçin İdeal) -->
-    <div id="interstitial-modal" class="fixed inset-0 bg-darker/90 backdrop-blur-sm z-[60] hidden flex-col items-center justify-center p-4 opacity-0 transition-opacity duration-300">
-        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 max-w-lg w-full flex flex-col items-center text-center shadow-2xl relative">
-            <h3 class="text-xl font-bold text-white mb-2" data-i18n="sponsor_title">Sponsored Content</h3>
-            <p class="text-sm text-slate-400 mb-6" data-i18n="sponsor_desc">Thank you for supporting our free app.</p>
-            
-            <div class="ad-placeholder w-full max-w-[300px] h-[250px] mb-6">
-                <span class="font-semibold text-slate-400" data-i18n="ad_inter">Interstitial Ad Space</span>
-            </div>
-
-            <button id="btn-close-ad" class="bg-slate-700 hover:bg-slate-600 text-white font-medium py-3 px-6 rounded-lg transition-colors w-full" data-i18n="btn_close_ad">
-                Close Ad & Continue
-            </button>
-        </div>
-    </div>
 
     <!-- Ayarlar Menüsü Overlay -->
     <div id="settings-overlay" class="fixed inset-0 bg-darker/80 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"></div>
@@ -249,25 +205,26 @@
             </div>
         </div>
 
-        <div class="ad-placeholder w-full h-[250px] mt-auto">
-            <span class="font-semibold text-slate-400" data-i18n="ad_side">Sidebar Ad (300x250)</span>
-            <span class="text-xs text-slate-500 mt-2 px-4" data-i18n="ad_side_desc">High CTR area for Google AdSense.</span>
+        <!-- Sağ DİKEY Reklam Alanı -->
+        <div class="w-full mt-auto min-h-[250px] overflow-hidden rounded-lg bg-slate-900/50 flex justify-center items-center">
+            <!-- zar_dikey -->
+            <ins class="adsbygoogle"
+                 style="display:block; width:100%;"
+                 data-ad-client="ca-pub-9732040219466009"
+                 data-ad-slot="2226141410"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
     </aside>
 
     <script>
-        /**
-         * LANGUAGE & TRANSLATION SYSTEM (i18n)
-         */
         const i18n = {
             en: {
                 app_name: "3D Dice Roller",
                 subtitle: "Professional 3D Dice Platform",
-                ad_top: "Top Ad Space (728x90)",
-                ad_top_desc: "Google AdSense will automatically place ads here.",
-                ad_mobile: "Mobile Ad Space",
-                ad_side: "Sidebar Ad Space",
-                ad_side_desc: "Google AdSense will automatically place ads here.",
                 settings_title: "Dice Settings",
                 dice_type: "Dice Type (Faces)",
                 dice_count: "Number of Dice",
@@ -277,20 +234,11 @@
                 d12: "D12 (12 Faces - Dodecahedron)",
                 d20: "D20 (20 Faces - Icosahedron)",
                 btn_roll: "ROLL DICE",
-                total_label: "Total:",
-                sponsor_title: "Sponsored Content",
-                sponsor_desc: "Thank you for supporting our free app.",
-                ad_inter: "Interstitial Ad Space",
-                btn_close_ad: "Close Ad & Continue"
+                total_label: "Total:"
             },
             tr: {
                 app_name: "ZarUstası 3D",
                 subtitle: "Profesyonel 3D Zar Atma Platformu",
-                ad_top: "Üst Reklam Alanı",
-                ad_top_desc: "Google AdSense buraya otomatik reklam yerleştirecektir.",
-                ad_mobile: "Mobil Reklam Alanı",
-                ad_side: "Yan Reklam Alanı",
-                ad_side_desc: "Google AdSense buraya otomatik reklam yerleştirecektir.",
                 settings_title: "Zar Ayarları",
                 dice_type: "Zar Tipi (Yüz Sayısı)",
                 dice_count: "Zar Sayısı",
@@ -300,11 +248,7 @@
                 d12: "D12 (12 Yüzlü - Dodekahedron)",
                 d20: "D20 (20 Yüzlü - İkosahedron)",
                 btn_roll: "ZAR AT",
-                total_label: "Toplam:",
-                sponsor_title: "Sponsorlu İçerik",
-                sponsor_desc: "Uygulamamızı ücretsiz tutmamıza destek olduğunuz için teşekkürler.",
-                ad_inter: "Geçiş Reklamı Alanı",
-                btn_close_ad: "Reklamı Kapat ve Devam Et"
+                total_label: "Toplam:"
             }
         };
 
@@ -351,8 +295,7 @@
             diceType: 6,
             diceCount: 1,
             isRolling: false,
-            rollCounter: 0,
-            showAdEveryNRolls: 5 
+            rollCounter: 0
         };
 
         const canvasContainer = document.getElementById('canvas-container');
@@ -366,9 +309,6 @@
         const btnCloseSettings = document.getElementById('btn-close-settings');
         const settingsDrawer = document.getElementById('settings-drawer');
         const settingsOverlay = document.getElementById('settings-overlay');
-
-        const interstitialModal = document.getElementById('interstitial-modal');
-        const btnCloseAd = document.getElementById('btn-close-ad');
 
         function toggleSettings() {
             const isClosed = settingsDrawer.classList.contains('translate-x-full');
@@ -599,12 +539,7 @@
 
         btnRoll.addEventListener('click', () => {
             if (state.isRolling) return;
-            
             state.rollCounter++;
-            if (state.rollCounter % state.showAdEveryNRolls === 0) {
-                showInterstitialAd();
-            }
-
             rollDice();
         });
 
@@ -740,23 +675,6 @@
             renderer.render(scene, camera);
         }
 
-        function showInterstitialAd() {
-            interstitialModal.classList.remove('hidden');
-            setTimeout(() => {
-                interstitialModal.classList.remove('opacity-0');
-                interstitialModal.classList.add('opacity-100');
-            }, 10);
-        }
-
-        btnCloseAd.addEventListener('click', () => {
-            interstitialModal.classList.remove('opacity-100');
-            interstitialModal.classList.add('opacity-0');
-            setTimeout(() => {
-                interstitialModal.classList.add('hidden');
-            }, 300);
-        });
-
-        // INIT
         window.onload = function() {
             applyLanguage(currentLang); 
             spawnDice();
