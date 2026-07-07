@@ -35,6 +35,9 @@
     }
     </script>
 
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9732040219466009" crossorigin="anonymous"></script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -162,10 +165,10 @@
     <div class="w-full bg-dark py-3 flex justify-center border-b border-slate-800 z-10 shrink-0">
         <div class="ad-placeholder hidden md:flex w-[728px] h-[90px]">
             <span class="font-semibold text-slate-400" data-i18n="ad_top">Top Ad Space (728x90)</span>
-            <span class="text-xs text-slate-500 mt-1" data-i18n="ad_top_desc">Place Adsterra or AdSense banner here</span>
+            <span class="text-xs text-slate-500 mt-1" data-i18n="ad_top_desc">Google AdSense will automatically place ads here.</span>
         </div>
         <div class="ad-placeholder flex md:hidden w-[320px] h-[50px]">
-            <span class="text-sm font-semibold text-slate-400" data-i18n="ad_mobile">Mobile Ad (320x50)</span>
+            <span class="text-sm font-semibold text-slate-400" data-i18n="ad_mobile">Mobile Ad Space</span>
         </div>
     </div>
 
@@ -188,7 +191,7 @@
         </div>
     </main>
 
-    <!-- Tam Ekran Geçiş Reklamı Modalı (Adsterra Popunder/Interstitial İçin İdeal) -->
+    <!-- Tam Ekran Geçiş Reklamı Modalı (Google AdSense Vignette/Interstitial İçin İdeal) -->
     <div id="interstitial-modal" class="fixed inset-0 bg-darker/90 backdrop-blur-sm z-[60] hidden flex-col items-center justify-center p-4 opacity-0 transition-opacity duration-300">
         <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 max-w-lg w-full flex flex-col items-center text-center shadow-2xl relative">
             <h3 class="text-xl font-bold text-white mb-2" data-i18n="sponsor_title">Sponsored Content</h3>
@@ -248,7 +251,7 @@
 
         <div class="ad-placeholder w-full h-[250px] mt-auto">
             <span class="font-semibold text-slate-400" data-i18n="ad_side">Sidebar Ad (300x250)</span>
-            <span class="text-xs text-slate-500 mt-2 px-4" data-i18n="ad_side_desc">High CTR area for Adsterra/AdSense.</span>
+            <span class="text-xs text-slate-500 mt-2 px-4" data-i18n="ad_side_desc">High CTR area for Google AdSense.</span>
         </div>
     </aside>
 
@@ -261,10 +264,10 @@
                 app_name: "3D Dice Roller",
                 subtitle: "Professional 3D Dice Platform",
                 ad_top: "Top Ad Space (728x90)",
-                ad_top_desc: "Place Adsterra or AdSense banner here",
-                ad_mobile: "Mobile Ad (320x50)",
-                ad_side: "Sidebar Ad (300x250)",
-                ad_side_desc: "High CTR area for Adsterra/AdSense.",
+                ad_top_desc: "Google AdSense will automatically place ads here.",
+                ad_mobile: "Mobile Ad Space",
+                ad_side: "Sidebar Ad Space",
+                ad_side_desc: "Google AdSense will automatically place ads here.",
                 settings_title: "Dice Settings",
                 dice_type: "Dice Type (Faces)",
                 dice_count: "Number of Dice",
@@ -283,11 +286,11 @@
             tr: {
                 app_name: "ZarUstası 3D",
                 subtitle: "Profesyonel 3D Zar Atma Platformu",
-                ad_top: "Üst Reklam Alanı (728x90)",
-                ad_top_desc: "Adsterra veya AdSense banner'ınızı ekleyin",
-                ad_mobile: "Mobil Reklam (320x50)",
-                ad_side: "Yan Reklam (300x250)",
-                ad_side_desc: "Adsterra için en yüksek tıklama alan bölge.",
+                ad_top: "Üst Reklam Alanı",
+                ad_top_desc: "Google AdSense buraya otomatik reklam yerleştirecektir.",
+                ad_mobile: "Mobil Reklam Alanı",
+                ad_side: "Yan Reklam Alanı",
+                ad_side_desc: "Google AdSense buraya otomatik reklam yerleştirecektir.",
                 settings_title: "Zar Ayarları",
                 dice_type: "Zar Tipi (Yüz Sayısı)",
                 dice_count: "Zar Sayısı",
@@ -310,9 +313,8 @@
         function applyLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('dice_lang', lang);
-            document.documentElement.lang = lang; // SEO uyumluluğu için HTML lang değiştir
+            document.documentElement.lang = lang; 
             
-            // Tüm metinleri güncelle
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (i18n[lang][key]) {
@@ -320,14 +322,12 @@
                 }
             });
 
-            // Select Opsiyonlarını Güncelle
             document.getElementById('opt-d4').textContent = i18n[lang].d4;
             document.getElementById('opt-d6').textContent = i18n[lang].d6;
             document.getElementById('opt-d8').textContent = i18n[lang].d8;
             document.getElementById('opt-d12').textContent = i18n[lang].d12;
             document.getElementById('opt-d20').textContent = i18n[lang].d20;
 
-            // Buton UI Stillerini Güncelle
             const btnEn = document.getElementById('btn-lang-en');
             const btnTr = document.getElementById('btn-lang-tr');
             
@@ -347,18 +347,14 @@
         document.getElementById('btn-lang-en').addEventListener('click', () => applyLanguage('en'));
         document.getElementById('btn-lang-tr').addEventListener('click', () => applyLanguage('tr'));
 
-        /**
-         * UYGULAMA DURUMU VE DEĞİŞKENLERİ
-         */
         const state = {
             diceType: 6,
             diceCount: 1,
             isRolling: false,
             rollCounter: 0,
-            showAdEveryNRolls: 5 // Her 5 atışta bir geçiş (popunder/interstitial) reklamı göster
+            showAdEveryNRolls: 5 
         };
 
-        // DOM Elementleri
         const canvasContainer = document.getElementById('canvas-container');
         const btnRoll = document.getElementById('btn-roll');
         const selectDiceType = document.getElementById('dice-type');
@@ -366,13 +362,11 @@
         const totalResultDiv = document.getElementById('total-result');
         const totalScoreSpan = document.getElementById('total-score');
         
-        // Ayarlar Çekmecesi Değişkenleri
         const btnOpenSettings = document.getElementById('btn-open-settings');
         const btnCloseSettings = document.getElementById('btn-close-settings');
         const settingsDrawer = document.getElementById('settings-drawer');
         const settingsOverlay = document.getElementById('settings-overlay');
 
-        // Geçiş Reklamı Modalı
         const interstitialModal = document.getElementById('interstitial-modal');
         const btnCloseAd = document.getElementById('btn-close-ad');
 
@@ -393,12 +387,8 @@
         btnCloseSettings.addEventListener('click', toggleSettings);
         settingsOverlay.addEventListener('click', toggleSettings);
 
-        /**
-         * THREE.JS SAHNE KURULUMU
-         */
         const scene = new THREE.Scene();
         
-        // Kamera Ayarı: Yukarıdan (y:9) hafif çapraz (z:7) bakış ile zarların üst yüzeyi çok net gözükecek
         const camera = new THREE.PerspectiveCamera(45, canvasContainer.clientWidth / canvasContainer.clientHeight, 0.1, 100);
         camera.position.set(0, 9, 7); 
         camera.lookAt(0, 0, 0);
@@ -410,7 +400,6 @@
         renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         canvasContainer.appendChild(renderer.domElement);
 
-        // Işıklandırma
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
         scene.add(ambientLight);
 
@@ -427,7 +416,6 @@
         pointLight.position.set(-5, 5, -5);
         scene.add(pointLight);
 
-        // Zemin Gölgesi
         const planeGeometry = new THREE.PlaneGeometry(50, 50);
         const planeMaterial = new THREE.ShadowMaterial({ opacity: 0.3 });
         const plane = new THREE.Mesh(planeGeometry, planeMaterial);
@@ -770,7 +758,7 @@
 
         // INIT
         window.onload = function() {
-            applyLanguage(currentLang); // Önce dili ayarla
+            applyLanguage(currentLang); 
             spawnDice();
             animate();
         };
