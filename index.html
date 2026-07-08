@@ -4,14 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- SEO Optimizasyonu -->
+    <!-- SEO Optimizasyonu (İngilizce Odaklı) -->
     <title>Roll a Dice Online - 3D Dice Roller (D6, D12, D20)</title>
     <meta name="description" content="Free online 3D dice roller. Roll D6, D8, D12, D20, and more with realistic physics and beautiful animations. Perfect for tabletop games, D&D, and board games.">
     <meta name="keywords" content="roll a dice, 3d dice roller, online dice, random dice generator, dnd dice roller, d20 roller, virtual dice">
     <meta name="author" content="3D Dice Roller">
+    <meta name="robots" content="index, follow">
 
-    <!-- ADSTERRA POPUNDER REKLAMI -->
-    <script src="https://pl30250905.effectivecpmnetwork.com/a2/30/8d/a2308ddf3873790827c0318202f2579b.js"></script>
+    <!-- Open Graph / Sosyal Medya -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Roll a Dice Online - 3D Dice Roller">
+    <meta property="og:description" content="Roll multi-sided 3D dice online with realistic physics. Free virtual dice for all your gaming needs.">
+    
+    <!-- Schema.org Zengin Sonuçlar -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "3D Dice Roller",
+      "alternateName": "Roll a Dice Online",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript and WebGL",
+      "description": "Free online 3D dice roller featuring realistic physics, multiple dice types (D4, D6, D8, D12, D20) and highly engaging holographic visual effects.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Google AdSense Ana Scripti (Sadece 1 Kere Yüklenir) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9732040219466009" crossorigin="anonymous"></script>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -68,7 +93,7 @@
 <body class="flex flex-col h-screen">
 
     <!-- Üst Bar ve Logo -->
-    <header class="w-full bg-darker border-b border-slate-800 p-4 flex items-center justify-between z-20 shadow-lg shrink-0">
+    <header class="w-full bg-darker border-b border-slate-800 p-4 flex items-center justify-between z-20 shadow-lg">
         <div class="flex items-center gap-3">
             <div class="w-10 h-10 flex items-center justify-center">
                 <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-lg">
@@ -95,7 +120,7 @@
                 <button id="btn-lang-tr" class="px-2 py-1 rounded-md text-xs font-bold transition-colors text-slate-400 hover:text-white">TR</button>
             </div>
 
-            <button id="btn-open-settings" class="p-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg text-indigo-400 hover:text-indigo-300 transition-colors shadow-md">
+            <button id="btn-open-settings" class="p-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg text-indigo-400 hover:text-indigo-300 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-md">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -104,19 +129,19 @@
         </div>
     </header>
 
-    <!-- Üst YATAY Reklam Alanı (Adsterra 728x90) -->
-    <div class="w-full bg-dark flex justify-center border-b border-slate-800 z-10 shrink-0">
-        <div class="hidden md:flex w-[728px] h-[90px] justify-center items-center overflow-hidden">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : '6c5f5e130d41708c9ae9214038d07c49',
-                    'format' : 'iframe',
-                    'height' : 90,
-                    'width' : 728,
-                    'params' : {}
-                };
+    <!-- Üst YATAY Reklam Alanı -->
+    <div class="w-full bg-dark py-2 flex justify-center border-b border-slate-800 z-10 shrink-0">
+        <div class="w-full max-w-[970px] min-h-[90px] flex justify-center items-center overflow-hidden">
+            <!-- zar_ust_banner -->
+            <ins class="adsbygoogle"
+                 style="display:block; width:100%;"
+                 data-ad-client="ca-pub-9732040219466009"
+                 data-ad-slot="7707779790"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-            <script type="text/javascript" src="https://www.highperformanceformat.com/6c5f5e130d41708c9ae9214038d07c49/invoke.js"></script>
         </div>
     </div>
 
@@ -144,7 +169,7 @@
     <!-- Ayarlar Çekmecesi -->
     <aside id="settings-drawer" class="fixed inset-y-0 right-0 w-full sm:w-96 bg-dark border-l border-slate-800 p-6 flex flex-col gap-6 overflow-y-auto z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-[-10px_0_30px_rgba(0,0,0,0.5)]">
         
-        <div class="flex items-center justify-between mb-2 shrink-0">
+        <div class="flex items-center justify-between mb-2">
             <h2 class="text-xl font-bold text-white flex items-center gap-2">
                 <svg class="h-6 w-6 text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
@@ -158,7 +183,7 @@
             </button>
         </div>
 
-        <div class="bg-slate-800/50 rounded-2xl p-5 border border-slate-700 backdrop-blur-sm shrink-0">
+        <div class="bg-slate-800/50 rounded-2xl p-5 border border-slate-700 backdrop-blur-sm">
             <div class="mb-5">
                 <label class="block text-sm text-slate-400 mb-2 font-medium" data-i18n="dice_type">Dice Type (Faces)</label>
                 <select id="dice-type" class="w-full bg-slate-900 border border-slate-600 rounded-xl p-3 text-white focus:outline-none focus:border-indigo-500 transition-colors cursor-pointer appearance-none">
@@ -180,31 +205,22 @@
             </div>
         </div>
 
-        <!-- Sağ DİKEY Reklam Alanı (Adsterra 300x250) -->
-        <div class="w-full mt-2 bg-slate-900/50 rounded-lg flex justify-center items-center overflow-hidden border border-slate-700 min-h-[250px] shrink-0">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : '8008f8d4a16d970a0480c51aa705528c',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                };
+        <!-- Sağ DİKEY Reklam Alanı -->
+        <div class="w-full mt-auto min-h-[250px] overflow-hidden rounded-lg bg-slate-900/50 flex justify-center items-center">
+            <!-- zar_dikey -->
+            <ins class="adsbygoogle"
+                 style="display:block; width:100%;"
+                 data-ad-client="ca-pub-9732040219466009"
+                 data-ad-slot="2226141410"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-            <script type="text/javascript" src="https://www.highperformanceformat.com/8008f8d4a16d970a0480c51aa705528c/invoke.js"></script>
-        </div>
-
-        <!-- Sağ DİKEY Native Reklam Alanı (Adsterra Native) -->
-        <div class="w-full mt-2 bg-slate-900/50 rounded-lg flex justify-center items-center overflow-hidden border border-slate-700 shrink-0">
-            <script async="async" data-cfasync="false" src="https://pl30250908.effectivecpmnetwork.com/03e3fc8f8878de82b97f7481b201dc7b/invoke.js"></script>
-            <div id="container-03e3fc8f8878de82b97f7481b201dc7b"></div>
         </div>
     </aside>
 
     <script>
-        /**
-         * LANGUAGE & TRANSLATION SYSTEM (i18n)
-         */
         const i18n = {
             en: {
                 app_name: "3D Dice Roller",
@@ -275,13 +291,11 @@
         document.getElementById('btn-lang-en').addEventListener('click', () => applyLanguage('en'));
         document.getElementById('btn-lang-tr').addEventListener('click', () => applyLanguage('tr'));
 
-        /**
-         * UYGULAMA DURUMU VE DEĞİŞKENLERİ
-         */
         const state = {
             diceType: 6,
             diceCount: 1,
-            isRolling: false
+            isRolling: false,
+            rollCounter: 0
         };
 
         const canvasContainer = document.getElementById('canvas-container');
@@ -313,9 +327,6 @@
         btnCloseSettings.addEventListener('click', toggleSettings);
         settingsOverlay.addEventListener('click', toggleSettings);
 
-        /**
-         * THREE.JS SAHNE KURULUMU
-         */
         const scene = new THREE.Scene();
         
         const camera = new THREE.PerspectiveCamera(45, canvasContainer.clientWidth / canvasContainer.clientHeight, 0.1, 100);
@@ -528,6 +539,7 @@
 
         btnRoll.addEventListener('click', () => {
             if (state.isRolling) return;
+            state.rollCounter++;
             rollDice();
         });
 
